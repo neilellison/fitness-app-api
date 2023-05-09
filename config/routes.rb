@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get "/exercises/:id" => "exercises#show"
   get "/routines" => "routines#index"
   post "/routines" => "routines#create"
+  get "/routines/:id" => "routines#show"
+  patch "routines/:id" => "routines#update"
 end
