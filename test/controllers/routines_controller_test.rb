@@ -35,8 +35,8 @@ class RoutinesControllerTest < ActionDispatch::IntegrationTest
   # end
 
   test "destroy" do
-    assert_difference "Photo.count", -1 do
-      delete "/photos/#{Photo.first.id}.json"
+    assert_difference "Routine.count", -1 do
+      delete "/routines/#{Routine.first.id}.json"
       assert_response 200
     end
   end
