@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   get "/users" => "users#index"
   get "/users/:id" => "users#show"
   get "/exercises" => "exercises#index"
+  get "/exercises/:id" => "exercises#show"
+  get "/routines" => "routines#index"
 end
