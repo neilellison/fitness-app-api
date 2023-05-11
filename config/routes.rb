@@ -1,13 +1,18 @@
 Rails.application.routes.draw do
-  post "/users" => "users#create"
-  post "/sessions" => "sessions#create"
-  get "/users" => "users#index"
-  get "/users/:id" => "users#show"
-  get "/exercises" => "exercises#index"
-  get "/exercises/:id" => "exercises#show"
-  get "/routines" => "routines#index"
-  post "/routines" => "routines#create"
-  get "/routines/:id" => "routines#show"
-  patch "routines/:id" => "routines#update"
-  delete "/routines/:id" => "routines#destroy"
+  # post "/users" => "users#create"
+  # post "/sessions" => "sessions#create"
+  # get "/users" => "users#index"
+  # get "/users/:id" => "users#show"
+  # get "/exercises" => "exercises#index"
+  # get "/exercises/:id" => "exercises#show"
+  # get "/routines" => "routines#index"
+  # post "/routines" => "routines#create"
+  # get "/routines/:id" => "routines#show"
+  # patch "routines/:id" => "routines#update"
+  # delete "/routines/:id" => "routines#destroy"
+  resources :routine_exercises
+  resources :users
+  resources :sessions
+  resources :exercises
+  resources :routines
 end

@@ -11,7 +11,7 @@ class RoutinesControllerTest < ActionDispatch::IntegrationTest
 
   test "create" do
     assert_difference "Routine.count", 1 do
-      post "/routines.json", params: { user_id: "1", exercise_id: 800, reps: 5 }
+      post "/routines.json", params: { user_id: 1, exercise_id: 1, reps: 5 }
       assert_response 200
     end
   end
