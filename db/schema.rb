@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_10_184800) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_11_202822) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -29,6 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_10_184800) do
     t.integer "reps"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "sets"
     t.index ["exercise_id"], name: "index_routine_exercises_on_exercise_id"
     t.index ["routine_id"], name: "index_routine_exercises_on_routine_id"
   end
@@ -36,7 +37,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_10_184800) do
   create_table "routines", force: :cascade do |t|
     t.integer "user_id"
     t.integer "exercise_id"
-    t.integer "reps"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
