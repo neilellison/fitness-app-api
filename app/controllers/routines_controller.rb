@@ -9,8 +9,7 @@ class RoutinesController < ApplicationController
       name: params[:name],
       description: params[:description],
       user_id: params[:user_id],
-      exercise_id: params[:exercise_id],
-      reps: params[:reps]
+      exercise_id: params[:exercise_id]
     )
     @routine.save
     render :show
