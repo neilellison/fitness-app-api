@@ -1,13 +1,9 @@
 class RoutinesController < ApplicationController
   def index
     @routines = Routine.all
-    render json: @routines
+    render json: @routines.to_json(include: { exercises: {} })
   end  
 
-  def routine_exercises
-    routine = Routine.find(params[:id])
-    render json: routine.routine_exercises.to_json(include: :exercise)
-  end
 
   def create
     @routine = Routine.create(
@@ -23,7 +19,7 @@ class RoutinesController < ApplicationController
   def show
     routine = Routine.includes(:exercises, :routine_exercises).find(params[:id])
 
-    render json: routine.to_json(include: { exercises: {}, routine_exercises: {} })
+    render json: routine.to_json(include: { exercises: {} })
   end
 
   

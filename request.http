@@ -1,0 +1,38 @@
+GET http://localhost:3000/routines/1.json
+
+###
+
+
+POST http://localhost:3000/routines.json
+Content-Type: application/json
+
+{
+  "user_id": 1,
+  "name": "New Routine",
+  "description": "Created a new routine"
+}
+
+###
+GET http://localhost:3000/exercises.json
+
+###
+
+POST http://localhost:3000/routine_exercises.json
+Content-Type: application/json
+
+{
+  "routine_id": 1,
+  "exercise_id": 2,
+  "sets": 3,
+  "reps": 10
+}
+
+###
+
+POST http://localhost:3000/sessions.json
+Content-Type: application/json
+
+{
+  "email": "jim@example.com",
+  "password": "password"
+}
