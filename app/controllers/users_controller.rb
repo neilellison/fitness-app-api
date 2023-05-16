@@ -20,6 +20,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
-    render :show
+    @routines = @user.routines
+    render json: { user: @user, routines: @routines }
   end  
 end

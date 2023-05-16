@@ -4,6 +4,11 @@ class RoutinesController < ApplicationController
     render json: @routines
   end  
 
+  def routine_exercises
+    routine = Routine.find(params[:id])
+    render json: routine.routine_exercises.to_json(include: :exercise)
+  end
+
   def create
     @routine = Routine.create(
       name: params[:name],
@@ -12,7 +17,7 @@ class RoutinesController < ApplicationController
       exercise_id: params[:exercise_id]
     )
     @routine.save
-    render :show
+    render json: @routine.to_json(include: { exercises: {}, routine_exercises: {} })
   end
 
   def show
@@ -35,5 +40,11 @@ class RoutinesController < ApplicationController
     @routine = Routine.find_by(id: params[:id])
     @routine.destroy
     render json: { message: "Routine Deleted" }
+  end
+
+  def user_routines
+    @user = User.find(params[:user_id])
+    @routines = @user.routines
+    render json: @routines
   end
 end

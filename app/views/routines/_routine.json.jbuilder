@@ -1,5 +1,14 @@
-json.id routine.id
-json.name routine.name
-json.description routine.description
-json.user_id routine.user_id
-json.exercise_id routine.exercise_id
+json.exercises routine.exercises do |exercise|
+  json.id exercise.id
+  json.name exercise.name
+end
+
+json.routine_exercises routine.routine_exercises do |routine_exercise|
+  json.id routine_exercise.id
+  json.reps routine_exercise.reps
+  
+  json.exercise routine_exercise.exercise do |exercise|
+    json.id exercise.id
+    json.name exercise.name
+  end
+end
