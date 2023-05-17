@@ -1,6 +1,6 @@
 # README
 
-# fitness-app-api. The name of the app is Muscler.
+# Muscler (Backend)
 
 Muscler is essentially a Twitter for workouts. Instead of making a "tweet", a user can create a new exercise routine, which consists of a name, description, and a list of exercises with their respective reps and sets. This is the backend of the app, which has all of the appropriate models, controllers, routes, and jbuilders, along with some seeded data.
 
